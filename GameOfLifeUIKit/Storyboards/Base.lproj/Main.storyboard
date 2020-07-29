@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4SQ-Fn-vha">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Game View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="GameViewController" customModule="GameOfLifeUIKit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Hs4-Pe-7S6">
+                                <rect key="frame" x="20" y="529" width="374" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1cm-9I-u2j">
+                                        <rect key="frame" x="0.0" y="0.0" width="70" height="30"/>
+                                        <state key="normal" title="Random"/>
+                                        <connections>
+                                            <action selector="RandomButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NR5-S1-Bl2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HAf-hV-b2T">
+                                        <rect key="frame" x="76" y="0.0" width="70" height="30"/>
+                                        <state key="normal" title="Glider"/>
+                                        <connections>
+                                            <action selector="GliderButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pno-7S-cvf"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wxf-CG-CO4">
+                                        <rect key="frame" x="152" y="0.0" width="70" height="30"/>
+                                        <state key="normal" title="Blinker"/>
+                                        <connections>
+                                            <action selector="BlinkerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jvs-qF-PJ8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZCL-Sw-tB4">
+                                        <rect key="frame" x="228" y="0.0" width="70" height="30"/>
+                                        <state key="normal" title="Ship"/>
+                                        <connections>
+                                            <action selector="ToadButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bz5-Ha-brR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SpA-Wp-tAL">
+                                        <rect key="frame" x="304" y="0.0" width="70" height="30"/>
+                                        <state key="normal" title="Reset"/>
+                                        <connections>
+                                            <action selector="ResetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sum-tK-jA7"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oBk-TD-O6j">
+                                <rect key="frame" x="177" y="602" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="oBk-TD-O6j" secondAttribute="height" multiplier="1:1" id="N9g-K3-HCt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" image="play.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30" scale="large" weight="heavy"/>
+                                </state>
+                                <connections>
+                                    <action selector="playButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nHr-gC-h0f"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1X4-uv-com">
+                                <rect key="frame" x="207" y="740" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Hs4-Pe-7S6" secondAttribute="trailing" constant="20" id="4fu-WO-nrv"/>
+                            <constraint firstItem="oBk-TD-O6j" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="177" id="86H-wA-T1D"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="oBk-TD-O6j" secondAttribute="bottom" constant="200" id="Qxh-uP-n0q"/>
+                            <constraint firstItem="oBk-TD-O6j" firstAttribute="centerX" secondItem="Hs4-Pe-7S6" secondAttribute="centerX" id="aJG-RA-hmz"/>
+                            <constraint firstItem="1X4-uv-com" firstAttribute="centerX" secondItem="oBk-TD-O6j" secondAttribute="centerX" id="be2-ts-MPS"/>
+                            <constraint firstItem="Hs4-Pe-7S6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="dUd-5Y-3UJ"/>
+                            <constraint firstItem="1X4-uv-com" firstAttribute="top" secondItem="oBk-TD-O6j" secondAttribute="bottom" constant="78" id="k9i-WB-4yy"/>
+                            <constraint firstItem="oBk-TD-O6j" firstAttribute="top" secondItem="Hs4-Pe-7S6" secondAttribute="bottom" constant="43" id="rLf-SR-oZN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="IOs-u0-09S">
+                        <barButtonItem key="rightBarButtonItem" title="About" id="XFs-Ce-qNf">
+                            <connections>
+                                <action selector="AboutButton:" destination="BYZ-38-t0r" id="6xF-JG-ebi"/>
+                                <segue destination="VU9-o0-Ma5" kind="show" identifier="aboutSegue" id="1uE-qj-0Jd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="aboutButton" destination="XFs-Ce-qNf" id="pAi-5I-WLl"/>
+                        <outlet property="blinkerButton" destination="wxf-CG-CO4" id="bB3-HX-CsS"/>
+                        <outlet property="genLabel" destination="1X4-uv-com" id="syH-GV-j2P"/>
+                        <outlet property="gliderButton" destination="HAf-hV-b2T" id="oYZ-sh-HaK"/>
+                        <outlet property="randomButton" destination="1cm-9I-u2j" id="6Nl-3L-XP5"/>
+                        <outlet property="resetButton" destination="SpA-Wp-tAL" id="qxD-YH-2md"/>
+                        <outlet property="shipButton" destination="ZCL-Sw-tB4" id="VxN-CK-KHI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1070" y="138"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Vj9-Ea-nbf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4SQ-Fn-vha" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Yhs-n1-FGG">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="WPD-K0-avO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TG8-gK-XRT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+        <!--About-->
+        <scene sceneID="Cdw-SF-Xmi">
+            <objects>
+                <viewController id="VU9-o0-Ma5" customClass="AboutViewController" customModule="GameOfLifeUIKit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PJI-aQ-mMC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conway's Game of Life: Rules" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Frn-tg-JwK">
+                                <rect key="frame" x="15" y="110" width="320" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Zyt-nW-KJ7">
+                                <rect key="frame" x="10" y="148" width="394" height="414"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">The universe of the Game of Life is an infinite, two-dimensional orthogonal grid of square cells, each of which is in one of two possible states, live or dead, (or populated and unpopulated, respectively). Every cell interacts with its eight neighbors, which are the cells that are horizontally, vertically, or diagonally adjacent. At each step in time, the following transitions occur:
+
+1. Any live cell with two or three live neighbors survives.
+2. Any dead cell with three live neighbors becomes a live cell.
+3. All other live cells die in the next generation. Similarly, all other dead cells stay dead.
+
+Source: wikipedia.org/wiki/Conway's_Game_of_Life#Rules</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6w6-fY-mPZ" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Frn-tg-JwK" secondAttribute="trailing" symbolic="YES" id="9zH-vB-Xxo"/>
+                            <constraint firstItem="6w6-fY-mPZ" firstAttribute="trailing" secondItem="Zyt-nW-KJ7" secondAttribute="trailing" constant="10" id="Ga8-sc-g7C"/>
+                            <constraint firstItem="Frn-tg-JwK" firstAttribute="top" secondItem="6w6-fY-mPZ" secondAttribute="top" constant="22" id="Syt-c5-OHz"/>
+                            <constraint firstItem="6w6-fY-mPZ" firstAttribute="bottom" secondItem="Zyt-nW-KJ7" secondAttribute="bottom" constant="300" id="VT2-a2-zP2"/>
+                            <constraint firstItem="Zyt-nW-KJ7" firstAttribute="top" secondItem="Frn-tg-JwK" secondAttribute="bottom" constant="8" id="Xo8-XN-K1V"/>
+                            <constraint firstItem="Frn-tg-JwK" firstAttribute="leading" secondItem="6w6-fY-mPZ" secondAttribute="leading" constant="15" id="lSz-ZQ-Bwk"/>
+                            <constraint firstItem="Zyt-nW-KJ7" firstAttribute="leading" secondItem="6w6-fY-mPZ" secondAttribute="leading" constant="10" id="phw-N3-pMF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6w6-fY-mPZ"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="About" id="2Yw-kS-OXU"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O1P-ai-M5E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1908.6956521739132" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="play.fill" catalog="system" width="116" height="128"/>
+    </resources>
+</document>
