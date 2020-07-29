@@ -33,6 +33,7 @@ class GameViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(updateLabel), name: .genChanged, object: nil)
            }
 
+    // MARK: - Methods
     @objc func updateLabel(_ notification: NSNotification ) {
         if let dict = notification.userInfo {
             if let id = dict["genChanged"] as? Int {
@@ -41,11 +42,14 @@ class GameViewController: UIViewController {
         }
     }
 
-    // MARK: - Methods
     func toggleButtonAccess() {
         for button in self.buttons {
             button.isEnabled.toggle()
           }
+    }
+
+    func buttonSound() {
+        AudioServicesPlaySystemSound(1104)
     }
     
     // MARK: - Actions
@@ -53,45 +57,46 @@ class GameViewController: UIViewController {
         if isPlaying == false {
             sender.setImage(UIImage(systemName: "pause.circle"), for: .normal)
             isPlaying = true
-            AudioServicesPlaySystemSound(1104)
+            buttonSound()
             toggleButtonAccess()
             gameGrid.playLoop(play: true)
         } else {
             sender.setImage(UIImage(systemName: "play.fill"), for: .normal)
             isPlaying = false
-            AudioServicesPlaySystemSound(1104)
+            buttonSound()
             toggleButtonAccess()
             gameGrid.playLoop(play: false)
         }
     }
     
     @IBAction func AboutButton(_ sender: Any) {
+        buttonSound()
         self.performSegue(withIdentifier: "aboutSegue", sender: self)
     }
     
     @IBAction func RandomButton(_ sender: Any) {
-        AudioServicesPlaySystemSound(1104)
+        buttonSound()
         gameGrid.randomBoard()
         
     }
     
     @IBAction func GliderButton(_ sender: Any) {
-        AudioServicesPlaySystemSound(1104)
-        gameGrid.gliderShape()  
+        buttonSound()
+        gameGrid.gliderShape()
     }
     
     @IBAction func BlinkerButton(_ sender: Any) {
-        AudioServicesPlaySystemSound(1104)
+        buttonSound()
         gameGrid.blinkerShape()
     }
     
     @IBAction func ToadButton(_ sender: Any) {
-        AudioServicesPlaySystemSound(1104)
+        buttonSound()
         gameGrid.spaceShipShape()
     }
     
     @IBAction func ResetButton(_ sender: Any) {
-        AudioServicesPlaySystemSound(1104)
+        buttonSound()
         gameGrid.resetGame()
     }
 }
