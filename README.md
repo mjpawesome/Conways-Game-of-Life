@@ -1,4 +1,4 @@
-# game-of-life
+# Conway's Game of Life iOS App
 
 Built a version of Conway's Game of Life using UIKit.  
 
